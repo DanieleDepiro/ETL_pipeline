@@ -26,7 +26,10 @@ def scrape_and_append_data(url):
     # Extract the data
     brand = soup.find("h3", class_="FtrEr_ QdlUSH FxZV-M HlZ_Tf _5Yd-hZ").text.strip()
     name = soup.find("span", class_="EKabf7 R_QwOV").text.strip()
-    price = soup.find("span", class_="sDq_FX _4sa1cA dgII7d Km7l2y").text.strip()
+    try:
+        price = soup.find("span", class_="sDq_FX _4sa1cA dgII7d Km7l2y").text.strip()
+    except AttributeError:
+        price = soup.find("span", class_="sDq_FX _4sa1cA FxZV-M HlZ_Tf").text.strip()
     today = datetime.date.today()
 
     data = [brand, name, price, today]
