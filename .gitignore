@@ -1,2 +1,3 @@
 *.ini
-shoes_db.csv
+/shoes_db.csv
+/.idea
