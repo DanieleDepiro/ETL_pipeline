@@ -20,7 +20,7 @@ with open('shoes_db.csv', 'w', newline='', encoding='UTF8') as f:
     writer.writerow(header)
 
 def scrape_and_append_data(url):
-    page = requests.get(url)
+    page = requests.get(url, verify= True)
     soup = BeautifulSoup(page.content, 'html.parser')
 
     # Extract the data

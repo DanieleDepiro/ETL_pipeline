@@ -19,11 +19,11 @@ def run_csv_to_db_script():
     subprocess.run([python_path, script_path])
 
 # Schedule run_main_script.
-schedule.every().day.at("17:35").do(run_main_script)
+schedule.every().day.at("10:01").do(run_main_script)
 
 
 # Schedule run_csv_to_db_script
-schedule.every().day.at("17:37").do(run_csv_to_db_script)
+schedule.every().day.at("10:01").do(run_csv_to_db_script)
 
 while True:
     schedule.run_pending()
